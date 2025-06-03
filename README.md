@@ -13,7 +13,7 @@ https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-us
 * **Scientific Computing:** SciPy
 * **Visualization**: Matplotlib, Seaborn
 * **Cross-validation**: StratifiedKFold (Scikit-learn)
-* **OS**: Linux (Ubuntu 24.04 LTS)
+* **OS**: Linux (Ubuntu Desktop 24.04 LTS)
 * **IDE**: VSCode, Jupyter Notebook
 
 ---
