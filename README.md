@@ -6,22 +6,15 @@ https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-us
 
 * **Language**: Python
 * **ML Models**: XGBoost, LightGBM, Catboost
-
-Hyperparameter Tuning: Optuna
-
-Feature Selection: SHAP
-
-Imputation: KNNImputer (Scikit-learn)
-
-Dataframes: pandas, polars
-
-Visualization: matplotlib, seaborn
-
-Cross-validation: StratifiedKFold (Scikit-learn)
-
-OS: Linux (Ubuntu 24.04 LTS)
-
-IDE: VSCode, Jupyter Notebook
+* **Hyperparameter Tuning**: Optuna
+* **Feature Selection**: SHAP
+* **Imputation**: KNNImputer (Scikit-learn)
+* **Data Manipulation & Analysis:** Pandas, NumPy, Polars
+* **Scientific Computing:** SciPy
+* **Visualization**: Matplotlib, Seaborn
+* **Cross-validation**: StratifiedKFold (Scikit-learn)
+* **OS**: Linux (Ubuntu 24.04 LTS)
+* **IDE**: VSCode, Jupyter Notebook
 
 ---
 
@@ -115,18 +108,7 @@ This project followed a comprehensive machine learning pipeline:
     * Analyzed other metrics like accuracy, precision, recall, and F1-score to gain a comprehensive understanding of model strengths and weaknesses.
     * [If applicable: Performed interpretability analyses to understand which features contributed most to predictions, e.g., using SHAP or LIME for tabular data, or saliency maps for CNNs if you managed that for images.]
 
-## 5. Technologies Used
-
-* **Programming Language:** Python
-* **Deep Learning Frameworks:** TensorFlow, Keras
-* **Data Manipulation & Analysis:** Pandas, NumPy
-* **Scientific Computing:** SciPy
-* **Machine Learning Libraries:** Scikit-learn
-* **Neuroimaging Specific Libraries:** NiBabel, Nilearn (If you used these for fMRI/MRI processing)
-* **Data Visualization:** Matplotlib, Seaborn
-* **Development Environment:** Jupyter Notebook
-
-## 6. Results & Key Findings
+## 5. Results & Key Findings
 
 * **Achieved AUC Score:** Our model achieved an AUC score of **[Your Achieved AUC Score, e.g., 0.XX]** on the validation/test set, demonstrating [e.g., 'strong predictive capabilities' or 'competitive performance'].
 * **[Your Key Insight 1]:** Briefly describe an important discovery or pattern observed (e.g., "Functional connectivity features extracted from specific brain regions proved to be highly indicative of PIU.").
@@ -137,7 +119,7 @@ This project followed a comprehensive machine learning pipeline:
     * ![Confusion Matrix](images/confusion_matrix.png)
     * *(Self-note: Replace `images/` with the actual path to your saved plots and ensure these plots are clear and professional.)*
 
-## 7. Conclusion & Future Work
+## 6. Conclusion & Future Work
 
 This project successfully developed a predictive model for Problematic Internet Use, demonstrating proficiency in handling complex, multi-modal neuroimaging data and applying deep learning techniques for classification. The insights gained highlight the potential of data-driven approaches in mental health diagnostics.
 
@@ -147,7 +129,7 @@ This project successfully developed a predictive model for Problematic Internet 
 * Conducting more in-depth feature importance analysis to identify critical biomarkers of PIU.
 * Investigating explainable AI (XAI) techniques to make model predictions more interpretable for clinical applications.
 
-## 8. How to Run This Project
+## 7. How to Run This Project
 
 To replicate the analysis and model training:
 
@@ -173,7 +155,7 @@ To replicate the analysis and model training:
     ```
     Follow the steps in the notebook to execute the data processing, model training, and evaluation.
 
-## 9. Repository Structure
+## 8. Repository Structure
 
 
 
