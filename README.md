@@ -50,7 +50,18 @@ Problematic Internet Use (PIU) is a growing concern, impacting mental health and
 
 The dataset provided by the Child Mind Institute (via Kaggle) includes:
 
-*Demographics data: 
+    Demographics - Information about age and sex of participants.
+    Internet Use - Number of hours of using computer/internet per day.
+    Children's Global Assessment Scale - Numeric scale used by mental health clinicians to rate the general functioning of youths under the age of 18.
+    Physical Measures - Collection of blood pressure, heart rate, height, weight and waist, and hip measurements.
+    FitnessGram Vitals and Treadmill - Measurements of cardiovascular fitness assessed using the NHANES treadmill protocol.
+    FitnessGram Child - Health related physical fitness assessment measuring five different parameters including aerobic capacity, muscular strength, muscular endurance, flexibility, and body composition.
+    Bio-electric Impedance Analysis - Measure of key body composition elements, including BMI, fat, muscle, and water content.
+    Physical Activity Questionnaire - Information about children's participation in vigorous activities over the last 7 days.
+    Sleep Disturbance Scale - Scale to categorize sleep disorders in children.
+    Actigraphy - Objective measure of ecological physical activity through a research-grade biotracker.
+    Parent-Child Internet Addiction Test - 20-item scale that measures characteristics and behaviors associated with compulsive use of the Internet including compulsivity, escapism, and dependency.
+
 
 
 
