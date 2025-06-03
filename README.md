@@ -44,11 +44,13 @@ The primary goal was to build a robust classification model capable of identifyi
 
 ## 2. Problem Statement
 
-Problematic Internet Use (PIU) is a growing concern, impacting mental health and daily functioning in children and adolescents. Early identification of PIU is crucial for effective intervention. This project aimed to create a predictive model by analyzing actigraphy data in conjunction with demographic and behavioral data to accurately classify individuals with PIU.
+Problematic Internet Use (PIU) is a growing concern, impacting mental health and daily functioning in children and adolescents. Early identification of PIU is crucial for effective intervention. This project aimed to create a predictive model by analyzing complex features from multiple data sources such as actigraphy, demographic and behavioral data to accurately classify individuals with PIU.
 
 ## 3. Dataset
 
 The dataset provided by the Child Mind Institute (via Kaggle) includes:
+
+*Demographics data: 
 
 
 
