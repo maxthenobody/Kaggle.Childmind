@@ -3,15 +3,23 @@ https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-us
 
 ---
 ## 기술 스택 (Tech Stack)
+
 Language: Python
+
 ML Models: XGBoost, LightGBM, Catboost
+
 Hyperparameter Tuning: Optuna
+
 Feature Selection: SHAP
+
 Dataframes: pandas, polars
+
 Visualization: matplotlib, seaborn
+
 Cross-validation: StratifiedKFold (Scikit-learn)
 
 OS: Linux (Ubuntu 24.04 LTS)
+
 IDE: VSCode
 ---
 
