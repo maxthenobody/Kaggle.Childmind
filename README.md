@@ -21,6 +21,7 @@ Cross-validation: StratifiedKFold (Scikit-learn)
 OS: Linux (Ubuntu 24.04 LTS)
 
 IDE: VSCode
+
 ---
 
 ## 프로젝트 개요
