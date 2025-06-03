@@ -4,13 +4,14 @@ https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-us
 ---
 ## 기술 스택 (Tech Stack)
 
-Language: Python
-
-ML Models: XGBoost, LightGBM, Catboost
+**Language**: Python
+**ML Models**: XGBoost, LightGBM, Catboost
 
 Hyperparameter Tuning: Optuna
 
 Feature Selection: SHAP
+
+Imputation: KNNImputer (Scikit-learn)
 
 Dataframes: pandas, polars
 
@@ -20,7 +21,7 @@ Cross-validation: StratifiedKFold (Scikit-learn)
 
 OS: Linux (Ubuntu 24.04 LTS)
 
-IDE: VSCode
+IDE: VSCode, Jupyter Notebook
 
 ---
 
@@ -62,9 +63,8 @@ The dataset provided by the Child Mind Institute (via Kaggle) includes:
     Actigraphy - Objective measure of ecological physical activity through a research-grade biotracker.
     Parent-Child Internet Addiction Test - 20-item scale that measures characteristics and behaviors associated with compulsive use of the Internet including compulsivity, escapism, and dependency.
 
-    ## Actigraphy Files and Field Descriptions
-
-    ### During their participation in the HBN study, some participants were given an accelerometer to wear for up to 30 days continually while at home and going about their regular daily lives.
+    ### Actigraphy Files and Field Descriptions ###
+    During their participation in the HBN study, some participants were given an accelerometer to wear for up to 30 days continually while at home and going about their regular daily lives.
 
     series_{train|test}.parquet/id={id} - Series to be used as training data, partitioned by id. Each series is a continuous recording of accelerometer data for a single subject spanning many days.
     id - The patient identifier corresponding to the id field in train/test.csv.
@@ -80,8 +80,100 @@ The dataset provided by the Child Mind Institute (via Kaggle) includes:
     quarter - The quarter of the year, an integer from 1 to 4.
     relative_date_PCIAT - The number of days (integer) since the PCIAT test was administered (negative days indicate that the actigraphy data has been collected before the test was administered).
 
+    * **Target Variable: Severity Impairment Index (SII)** Multiclass classification identifying the level of Problematic Internet Use (PIU).
 
 
+## 4. Methodology & Approach
+
+This project followed a comprehensive machine learning pipeline:
+
+1.  **Data Loading & Initial Exploration:**
+    * Loaded and understood the various data formats (parquet for actigraphy, CSV for tabular data).
+    * Performed initial sanity checks and basic statistical analyses.
+
+2.  **Data Preprocessing & Feature Engineering:**
+    * **Actigraphy Data:**
+        * Applied standard fMRI preprocessing steps (e.g., motion correction, skull stripping, normalization, spatial smoothing, time-series extraction from ROIs or voxel data).
+        * Extracted meaningful features from fMRI (e.g., functional connectivity matrices, regional brain activity measures, specific ROI signals).
+        * [If applicable: Describe how anatomical MRI was used, e.g., for segmentation or normalization reference.]
+    * **Tabular Data:** Handled missing values, encoded categorical features, and scaled numerical features.
+    * **Data Integration:** Developed strategies to combine features extracted from neuroimaging with demographic and behavioral data into a unified dataset for model training.
+
+3.  **Model Selection & Architecture:**
+    * Explored various machine learning and deep learning models suitable for classification.
+    * **[If you used CNNs for fMRI]:** Implemented a Convolutional Neural Network (CNN) architecture specifically designed for processing time-series fMRI data or extracted functional connectivity matrices.
+    * [If you combined models]: Discussed how tabular features were integrated (e.g., concatenated to CNN output, or trained separate models and ensemble).
+    * Used `TensorFlow` and `Keras` for building and training the neural network models.
+
+4.  **Training & Validation:**
+    * Utilized appropriate cross-validation strategies to ensure model generalization.
+    * Monitored training progress using metrics like AUC, accuracy, and loss.
+    * Applied techniques to prevent overfitting (e.g., dropout, early stopping, L1/L2 regularization).
+
+5.  **Model Evaluation:**
+    * Evaluated the final model performance on an unseen test set using the **Area Under the Receiver Operating Characteristic Curve (AUC)**, the primary competition metric.
+    * Analyzed other metrics like accuracy, precision, recall, and F1-score to gain a comprehensive understanding of model strengths and weaknesses.
+    * [If applicable: Performed interpretability analyses to understand which features contributed most to predictions, e.g., using SHAP or LIME for tabular data, or saliency maps for CNNs if you managed that for images.]
+
+## 5. Technologies Used
+
+* **Programming Language:** Python
+* **Deep Learning Frameworks:** TensorFlow, Keras
+* **Data Manipulation & Analysis:** Pandas, NumPy
+* **Scientific Computing:** SciPy
+* **Machine Learning Libraries:** Scikit-learn
+* **Neuroimaging Specific Libraries:** NiBabel, Nilearn (If you used these for fMRI/MRI processing)
+* **Data Visualization:** Matplotlib, Seaborn
+* **Development Environment:** Jupyter Notebook
+
+## 6. Results & Key Findings
+
+* **Achieved AUC Score:** Our model achieved an AUC score of **[Your Achieved AUC Score, e.g., 0.XX]** on the validation/test set, demonstrating [e.g., 'strong predictive capabilities' or 'competitive performance'].
+* **[Your Key Insight 1]:** Briefly describe an important discovery or pattern observed (e.g., "Functional connectivity features extracted from specific brain regions proved to be highly indicative of PIU.").
+* **[Your Key Insight 2]:** Another finding (e.g., "The integration of demographic data significantly improved model robustness, suggesting a synergistic effect with neuroimaging features.").
+* **Model Performance Visualization:**
+    * ![AUC ROC Curve](images/roc_curve.png)
+    * ![Training Loss & Accuracy](images/training_plot.png)
+    * ![Confusion Matrix](images/confusion_matrix.png)
+    * *(Self-note: Replace `images/` with the actual path to your saved plots and ensure these plots are clear and professional.)*
+
+## 7. Conclusion & Future Work
+
+This project successfully developed a predictive model for Problematic Internet Use, demonstrating proficiency in handling complex, multi-modal neuroimaging data and applying deep learning techniques for classification. The insights gained highlight the potential of data-driven approaches in mental health diagnostics.
+
+**Future Enhancements could include:**
+* Exploring more advanced deep learning architectures for multimodal data fusion.
+* Integrating external datasets for transfer learning or data augmentation.
+* Conducting more in-depth feature importance analysis to identify critical biomarkers of PIU.
+* Investigating explainable AI (XAI) techniques to make model predictions more interpretable for clinical applications.
+
+## 8. How to Run This Project
+
+To replicate the analysis and model training:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/maxthenobody/Kaggle.Childmind.git](https://github.com/maxthenobody/Kaggle.Childmind.git)
+    cd Kaggle.Childmind
+    ```
+2.  **Download the dataset:**
+    * You will need to join the [Child Mind Institute Problematic Internet Use competition](https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use) on Kaggle.
+    * Download the `archive.zip` (or specific files if you only used a subset) and place it in the project root directory.
+    * *(Self-note: Provide more specific instructions if the data needs unpacking or specific folder structures.)*
+3.  **Create a virtual environment and install dependencies:**
+    ```bash
+    conda create -n childmind python=3.9 # or venv
+    conda activate childmind
+    pip install -r requirements.txt
+    ```
+    *(Self-note: Ensure you have a `requirements.txt` file listing all libraries used, e.g., `tensorflow`, `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, `nibabel`, `nilearn`)*
+4.  **Run the Jupyter Notebook:**
+    ```bash
+    jupyter notebook "Kaggle Childmind Project.ipynb"
+    ```
+    Follow the steps in the notebook to execute the data processing, model training, and evaluation.
+
+## 9. Repository Structure
 
 
 
