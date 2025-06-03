@@ -2,7 +2,7 @@
 https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use
 
 ---
-기술 스택 (Tech Stack)
+## 기술 스택 (Tech Stack)
 Language: Python
 ML Models: XGBoost, LightGBM, Catboost
 Hyperparameter Tuning: Optuna
