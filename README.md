@@ -62,9 +62,9 @@ The dataset provided by the Child Mind Institute (via Kaggle) includes:
     Actigraphy - Objective measure of ecological physical activity through a research-grade biotracker.
     Parent-Child Internet Addiction Test - 20-item scale that measures characteristics and behaviors associated with compulsive use of the Internet including compulsivity, escapism, and dependency.
 
-    Actigraphy Files and Field Descriptions
+    ## Actigraphy Files and Field Descriptions
 
-    During their participation in the HBN study, some participants were given an accelerometer to wear for up to 30 days continually while at home and going about their regular daily lives.
+    ### During their participation in the HBN study, some participants were given an accelerometer to wear for up to 30 days continually while at home and going about their regular daily lives.
 
     series_{train|test}.parquet/id={id} - Series to be used as training data, partitioned by id. Each series is a continuous recording of accelerometer data for a single subject spanning many days.
     id - The patient identifier corresponding to the id field in train/test.csv.
