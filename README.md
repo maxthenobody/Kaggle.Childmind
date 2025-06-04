@@ -84,29 +84,28 @@ This project followed a comprehensive machine learning pipeline:
     * Loaded and understood the various data formats (parquet for actigraphy, CSV for tabular data).
     * Performed initial sanity checks and basic statistical analyses.
 
-2.  **Data Preprocessing & Feature Engineering:**
-    * **Actigraphy Data:**
-        * Applied standard fMRI preprocessing steps (e.g., motion correction, skull stripping, normalization, spatial smoothing, time-series extraction from ROIs or voxel data).
-        * Extracted meaningful features from fMRI (e.g., functional connectivity matrices, regional brain activity measures, specific ROI signals).
-        * [If applicable: Describe how anatomical MRI was used, e.g., for segmentation or normalization reference.]
-    * **Tabular Data:** Handled missing values, encoded categorical features, and scaled numerical features.
-    * **Data Integration:** Developed strategies to combine features extracted from neuroimaging with demographic and behavioral data into a unified dataset for model training.
+2.  **Data Preprocessing & Feature Engineering Hightlights:**
+    * **Actigraphy Data:** Extracted robust statistical features from various and unique data aggregation.
+    * **Tabular Data:** Handled missing values, encoded categorical features, and engineered meaningful features.
+    * **Data Integration:** Developed strategies to combine features extracted from actigraphy with demographic and behavioral data into a unified dataset for model training.
 
 3.  **Model Selection & Architecture:**
-    * Explored various machine learning and deep learning models suitable for classification.
-    * **[If you used CNNs for fMRI]:** Implemented a Convolutional Neural Network (CNN) architecture specifically designed for processing time-series fMRI data or extracted functional connectivity matrices.
-    * [If you combined models]: Discussed how tabular features were integrated (e.g., concatenated to CNN output, or trained separate models and ensemble).
-    * Used `TensorFlow` and `Keras` for building and training the neural network models.
+    * Explored various machine learning models suitable for classification.
+    * Gradient boosting decision tree models such as XGBoost, LightGBM, Catboost were used and ensmebled.
+    * Even though it's a classification problem, the target variable is ordinal, hence regression models were used and the predictions were postprocessed into classses using SciPy's scipy.optimize.minimize method which finds optimal thresholds.
 
 4.  **Training & Validation:**
-    * Utilized appropriate cross-validation strategies to ensure model generalization.
-    * Monitored training progress using metrics like AUC, accuracy, and loss.
+    * Utilized StratifiedKFold to ensure model generalization.
+    * Monitored training progress using metrics like RMSE loss and Quadratic Weighted Kappa(QWK).
     * Applied techniques to prevent overfitting (e.g., dropout, early stopping, L1/L2 regularization).
+  
+5.  **Hyperparameter Tuning & Feature Selection:**
+    * Used Optuna for hyperparameter tuning, a state-of-the-art open source library for automated hyperparameter search. https://optuna.org/
+    * Used SHAP(SHapley Additive exPlanations) for feature selection, a state-of-the-art open source library for explaining machine learning model outputs. https://shap.readthedocs.io/en/latest/
 
-5.  **Model Evaluation:**
-    * Evaluated the final model performance on an unseen test set using the **Area Under the Receiver Operating Characteristic Curve (AUC)**, the primary competition metric.
-    * Analyzed other metrics like accuracy, precision, recall, and F1-score to gain a comprehensive understanding of model strengths and weaknesses.
-    * [If applicable: Performed interpretability analyses to understand which features contributed most to predictions, e.g., using SHAP or LIME for tabular data, or saliency maps for CNNs if you managed that for images.]
+6.  **Model Evaluation:**
+    * Evaluated the final model performance on an unseen test set using QWK, the primary competition metric.
+    * Performed interpretability analyses to understand which features contributed most to predictions, using SHAP.
 
 ## 5. Results & Key Findings
 
