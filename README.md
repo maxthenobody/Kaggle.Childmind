@@ -1,4 +1,4 @@
-# Kaggle -- **Child Mind Institute** — Problematic Internet Use (PIU)
+# Kaggle -- Child Mind Institute — Problematic Internet Use (PIU)
 https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use
 
 ---
