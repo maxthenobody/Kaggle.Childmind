@@ -101,7 +101,7 @@ This project followed a comprehensive machine learning pipeline:
   
 5.  **Hyperparameter Tuning & Feature Selection:**
     * Used Optuna for hyperparameter tuning, a state-of-the-art open source library for automated hyperparameter search. https://optuna.org/
-    * Used SHAP(SHapley Additive exPlanations) for feature selection, a state-of-the-art open source library for explaining machine learning model outputs. https://shap.readthedocs.io/en/latest/
+    * Used SHAP(SHapley Additive exPlanations) for feature selection, a state-of-the-art open source library for explaining machine learning model outputs. https://shap.readthedocs.io/
 
 6.  **Model Evaluation:**
     * Evaluated the final model performance on an unseen test set using QWK, the primary competition metric.
@@ -109,7 +109,7 @@ This project followed a comprehensive machine learning pipeline:
 
 ## 5. Results & Key Findings
 
-* **Achieved AUC Score:** Our model achieved an AUC score of **[Your Achieved AUC Score, e.g., 0.XX]** on the validation/test set, demonstrating [e.g., 'strong predictive capabilities' or 'competitive performance'].
+* **Achieved QWK Score:** My model achieved a QWK score of **0.461** on the final test set, demonstrating moderate performance. However, considering the winner of the competition's score is 0.482, it seemed meaningful improvements were not feasible with the given dataset.
 * **[Your Key Insight 1]:** Briefly describe an important discovery or pattern observed (e.g., "Functional connectivity features extracted from specific brain regions proved to be highly indicative of PIU.").
 * **[Your Key Insight 2]:** Another finding (e.g., "The integration of demographic data significantly improved model robustness, suggesting a synergistic effect with neuroimaging features.").
 * **Model Performance Visualization:**
@@ -120,7 +120,7 @@ This project followed a comprehensive machine learning pipeline:
 
 ## 6. Conclusion & Future Work
 
-This project successfully developed a predictive model for Problematic Internet Use, demonstrating proficiency in handling complex, multi-modal neuroimaging data and applying deep learning techniques for classification. The insights gained highlight the potential of data-driven approaches in mental health diagnostics.
+This project successfully developed a predictive model for Problematic Internet Use, demonstrating proficiency in handling complex data and applying machine learning techniques for classification. The insights gained highlight the potential of data-driven approaches in mental health diagnostics.
 
 **Future Enhancements could include:**
 * Exploring more advanced deep learning architectures for multimodal data fusion.
