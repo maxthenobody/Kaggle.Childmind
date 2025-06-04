@@ -124,10 +124,11 @@ This project followed a comprehensive machine learning pipeline:
 This project successfully developed a predictive model for Problematic Internet Use, demonstrating proficiency in handling complex data and applying machine learning techniques for classification. The insights gained highlight the potential of data-driven approaches in mental health diagnostics.
 
 **Future Enhancements could include:**
-* Exploring more advanced deep learning architectures for multimodal data fusion.
 * Integrating external datasets for transfer learning or data augmentation.
 * Conducting more in-depth feature importance analysis to identify critical biomarkers of PIU.
 * Investigating explainable AI (XAI) techniques to make model predictions more interpretable for clinical applications.
+* Investigating the noticeable difference between CV score (0.525) and LB score (0.461) which may indicate overfitting.
+* Applying better ensemble techniques.
 
 ## 7. How to Run This Project
 
@@ -140,8 +141,7 @@ To replicate the analysis and model training:
     ```
 2.  **Download the dataset:**
     * You will need to join the [Child Mind Institute Problematic Internet Use competition](https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use) on Kaggle.
-    * Download the `archive.zip` (or specific files if you only used a subset) and place it in the project root directory.
-    * *(Self-note: Provide more specific instructions if the data needs unpacking or specific folder structures.)*
+    * Download the data and place it in the appropriate directories.
 3.  **Create a virtual environment and install dependencies:**
     ```bash
     conda create -n childmind python=3.9 # or venv
